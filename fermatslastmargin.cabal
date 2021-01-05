@@ -1,58 +1,99 @@
-cabal-version:      2.4
+cabal-version:      >=2.0
 name:               fermatslastmargin
 version:            0.1.0.0
-synopsis:           hook javascript to pass url to server
-homepage:           http://github.com/shapr/fermatslastmargin
 license:            AGPL-3.0-or-later
 license-file:       LICENSE
-author:             Shae Erisson
 maintainer:         shae@scannedinavian.com
+author:             Shae Erisson
+homepage:           http://github.com/shapr/fermatslastmargin
+synopsis:           hook javascript to pass url to server
 category:           Web
 extra-source-files: CHANGELOG.md
 
-common deps
-  default-language: Haskell2010
-  build-depends:
-    , aeson
-    , base                   >=4.13 && <=4.14
-    , bytestring
-    , config-schema          >=1.0.0
-    , config-value
-    , containers
-    , directory
-    , extra
-    , filemanip
-    , filepath
-    , fuzzy
-    , github                 ^>=0.24
-    , http-client
-    , http-client-tls
-    , http-types
-    , lucid
-    , process
-    , scotty
-    , text
-    , time
-    , wai-middleware-static
-
 library
-  import:          deps
-  hs-source-dirs:  src
-  ghc-options:     -ferror-spans -fshow-loaded-modules -Wall
-  exposed-modules:
-    Lib
-    Lib.Github
+    exposed-modules:
+        Lib
+        Lib.Github
+
+    hs-source-dirs:   src
+    default-language: Haskell2010
+    ghc-options:      -ferror-spans -fshow-loaded-modules -Wall
+    build-depends:
+        aeson -any,
+        base >=4.14 && <=4.15,
+        bytestring -any,
+        config-schema -any,
+        config-value -any,
+        containers -any,
+        directory -any,
+        extra -any,
+        filemanip -any,
+        filepath -any,
+        fuzzy -any,
+        github -any,
+        http-client -any,
+        http-client-tls -any,
+        http-types -any,
+        lucid -any,
+        process -any,
+        scotty -any,
+        text -any,
+        time -any,
+        wai-middleware-static -any
 
 executable fermatslastmargin
-  import:        deps
-  main-is:       Main.hs
-  ghc-options:   -threaded -ferror-spans -fshow-loaded-modules -Wall
-  build-depends:
-    , fermatslastmargin
-    , wai-extra
+    main-is:          Main.hs
+    default-language: Haskell2010
+    ghc-options:      -threaded -ferror-spans -fshow-loaded-modules -Wall
+    build-depends:
+        aeson -any,
+        base >=4.14 && <=4.15,
+        bytestring -any,
+        config-schema -any,
+        config-value -any,
+        containers -any,
+        directory -any,
+        extra -any,
+        filemanip -any,
+        filepath -any,
+        fuzzy -any,
+        github -any,
+        http-client -any,
+        http-client-tls -any,
+        http-types -any,
+        lucid -any,
+        process -any,
+        scotty -any,
+        text -any,
+        time -any,
+        wai-middleware-static -any,
+        fermatslastmargin -any,
+        wai-extra -any
 
 executable migrate
-  import:        deps
-  main-is:       Migrate.hs
-  ghc-options:   -threaded -ferror-spans -fshow-loaded-modules -Wall
-  build-depends: fermatslastmargin
+    main-is:          Migrate.hs
+    default-language: Haskell2010
+    ghc-options:      -threaded -ferror-spans -fshow-loaded-modules -Wall
+    build-depends:
+        aeson -any,
+        base >=4.14 && <=4.15,
+        bytestring -any,
+        config-schema -any,
+        config-value -any,
+        containers -any,
+        directory -any,
+        extra -any,
+        filemanip -any,
+        filepath -any,
+        fuzzy -any,
+        github -any,
+        http-client -any,
+        http-client-tls -any,
+        http-types -any,
+        lucid -any,
+        process -any,
+        scotty -any,
+        text -any,
+        time -any,
+        wai-middleware-static -any,
+        fermatslastmargin -any
